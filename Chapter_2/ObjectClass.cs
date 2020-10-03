@@ -21,6 +21,17 @@ namespace Chapter_1
 		//	Console.WriteLine("Hello");
 		//}
 	}
+
+
+	public static class StringExtension
+	{
+		public static void TestingExtension(this String str)
+		{
+			Console.WriteLine(str+" Extension Added");
+		}
+	}
+
+
 	class ObjectClass
 	{
 		public static void Main(string[] args)
@@ -36,7 +47,12 @@ namespace Chapter_1
 			Console.WriteLine("Calling Equals(): " + t1.Equals(t2));
 
 			//Formatting Console Output
-			new ObjectClass().ConsoleExample(); 
+			new ObjectClass().ConsoleExample();
+
+			//Using extension method
+			string str = "Hello world, string";
+			str.TestingExtension();
+
 			#endregion
 		}
 		/// <summary>
